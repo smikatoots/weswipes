@@ -1,0 +1,156 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+body {        
+    font-family: "Roboto";
+    font-size: 13px;
+    }
+
+.menuButtons {
+    width: 30px;
+    padding-left: 10px;
+}
+
+ol, ul {
+	list-style: none;
+    }
+
+h1 {
+    color: darkred;
+    font-size: 30px;
+}
+
+h2 {
+    
+}
+
+h3 {
+    
+}
+
+#titleBar {
+    font-size: 20px;
+    width: 200px;
+    text-align: center;
+    width:87.5%;
+	height: 100px;
+	display: flex;
+    align-items: center;
+    position: relative;
+	top:6px;
+	margin: auto;
+}
+
+/*ask jacob about flex items + how to position*/
+
+#menu {
+    width: 30%;
+    position: absolute;
+    top: 35%;
+    right: 1%;
+}
+
+#logo {
+    width: 60px;
+    padding: 20px;
+}
+
+#feed {
+    width: 500px;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+
+#postplaceholder {
+    width: 458px;
+    height: 100px;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    border: 0.2px solid grey;
+    padding: 20px;
+}
+
+.desktopFeedButtons
+{
+    border: none;
+    font: inherit;
+	font-size: 1em;
+    width: 97px;
+    height: 50px;
+    color: white;
+}
+
+.desktopFeedButtons:active {
+    font-style: italic;
+    opacity: 0.5;
+}
+
+.desktopFeedButtons:focus {
+    font-style: italic;
+    color: black;
+}
+
+#All {
+    background-color: #F8C51C;
+}
+
+#Events {
+    background-color: #E58041;
+}
+
+#LostFound {
+    background-color: #1AC6A4;
+}
+
+#Rides {
+    background-color: #95CF5B;
+}
+
+#Others {
+    background-color: #D14C7F;
+}
+
+#desktopNav {
+    /*temporary*/
+    display: none;
+}
+
+.mobileFeedButtons
+{
+    width: 70px;
+    display: none;
+}
+
+#mobileNav {
+    /*temporary*/
+    display: none;
+}
+

@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<title>WesAdmits 2.0</title>
+<link rel="stylesheet" href="main.css">
+<!--<link rel="stylesheet" href="unslider.css">
+<link rel="stylesheet" href="unslider-dots.css">-->
+<script src="jquery-2.1.4.min.js"></script>
+<script src="script.js"></script>
+<script src="velocity.min.js"></script>
+<script src="isotope.pkgd.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+	<nav>
+		
+        <ul id = mobileNav>
+            <li>About this Service</li>
+            <li>Your Profile</li>
+            <li>WesAdmits 1.0 (AKA Facebooks)</li>
+        </ul>
+        
+        <div id="titleBar">
+			<img id="logo" src="pics/logo.png">
+            <h1 id = "title">WesAdmits 2.0</h1>
+			<div id="menu">
+                    <img id="hamburger" class="menuButtons" src="pics/hamburger.png">
+					<img id="post" class="menuButtons" src="pics/post.png">
+                    <img id="inbox" class="menuButtons" src="pics/inbox.png">
+			</div>
+        </div>
+        
+        <ul id = desktopNav>
+            <li>About this Service</li>
+            <li>Your Profile</li>
+            <li>WesAdmits 1.0 (AKA Facebooks)</li>
+        </ul>
+		
+	</nav>
+	
+    <div id = "mobileFeedButtonsGroup">
+        <img class="mobileFeedButtons" src="pics/all.png">
+        <img class="mobileFeedButtons" src="pics/events.png">
+        <img class="mobileFeedButtons" src="pics/landf.png">
+        <img class="mobileFeedButtons" src="pics/rides.png">
+        <img class="mobileFeedButtons" src="pics/others.png">
+    </div>
+    
+    <div id="feed">
+        <div class="button-group filter-button-group">
+            <a href="#">
+                <button data-filter="*" id="All" class="desktopFeedButtons" type="button">All</button>
+            </a>
+            <a href="#">
+                <button data-filter=".events" id="Events" class="desktopFeedButtons" type="button">Events</button>
+            </a>
+            <a href="#">
+                <button data-filter=".lostfound" id="LostFound" class="desktopFeedButtons" type="button">Lost & Found</button>
+            </a>
+            <a href="#">
+                <button data-filter=".rides" id="Rides" class="desktopFeedButtons" type="button">Rides</button>
+            </a>
+            <a href="#">
+                <button data-filter=".others" id="Others" class="desktopFeedButtons" type="button">Others</button>
+            </a>
+        </div>
+        
+        <div class="grid" id="feedPosts">
+            <a href="#">
+                <div class="grid-item events" id="postplaceholder">
+                events</div>
+            </a>
+            <a href="#">
+                <div class="grid-item lostfound" id="postplaceholder">
+                lost and found
+                </div>
+            </a>
+            <a href="#">
+                <div class="grid-item rides" id="postplaceholder">
+                rides
+                </div>
+            </a>
+            <a href="#">
+                <div class="grid-item others" id="postplaceholder">
+                others
+                </div>
+            </a>
+            <a href="#">
+                <div class="grid-item events" id="postplaceholder">
+                events
+                </div>
+            </a>
+        </div>
+    </div>
+	
+	
+	</body>
+</html>
