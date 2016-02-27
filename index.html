@@ -10,27 +10,49 @@
 <script src="velocity.min.js"></script>
 <script src="isotope.pkgd.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
 	<nav>
         
         <div id="titleBar">
-			<img id="logo" src="pics/logo.png">
-            <h1 id = "title">WeSwipes</h1>
+            <img id="logo" src="pics/logo.png">
+            WeSwipes
 			<div id="menu">
-                    <img id="post" class="menuButtons" src="pics/post.png">
-                    <img id="hamburger" class="menuButtons" src="pics/hamburger.png">
 			</div>
         </div>
     </nav>
-    <hr>
         
 	<div id="frontPage">
     
     <div id="compose">
-        <button id="offer" class="composebutton" type="button">Offer</button>
-        <button id="request" class="composebutton" type="button">Request</button>
+        <button id="offer" class="btn composebutton" type="button">Offer</button>
+        <button id="request" class="btn composebutton" type="button">Request</button>
+        
+        <div class="dropdown">
+            <button class="btn-sm btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Location
+            <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
+        </div>
+        
         <select name="location">
             <option value="usdan">Usdan Marketplace</option>
             <option value="ucafe">Usdan Cafe</option>
@@ -46,38 +68,21 @@
             <option value="thirty">30 Minutes</option>
             <option value="hour">1 Hour</option>
         </select>
-        <textarea name="message" rows="2" cols="100">
-        Type notes here. 
+        <textarea name="message" placeholder="What do you want to note?">
         </textarea>
     </div>
     
         
     <div id="sideMenu">
-        <div class="button-group filter-button-group">
-            <a href="#">
-                <button data-filter="*" id="all" class="desktopFeedButtons" type="button">All</button>
-            </a>
-            <a href="#">
-                <button data-filter=".usdan" id="usdan" class="desktopFeedButtons" type="button">Usdan Marketplace</button>
-            </a>
-            <a href="#">
-                <button data-filter=".ucafe" id="ucafe" class="desktopFeedButtons" type="button">Usdan Cafe</button>
-            </a>
-            <a href="#">
-                <button data-filter=".pi" id="pi" class="desktopFeedButtons" type="button">Pi Cafe</button>
-            </a>
-            <a href="#">
-                <button data-filter=".summies" id="Summies" class="desktopFeedButtons" type="button">Summerfields</button>
-            </a>
-            <a href="#">
-                <button data-filter=".starcrescent" id="starcrescent" class="desktopFeedButtons" type="button">Star & Crescent</button>
-            </a>
-            <a href="#">
-                <button data-filter=".redblack" id="redblack" class="desktopFeedButtons" type="button">Red & Black Cafe</button>
-            </a>
-            <a href="#">
-                <button data-filter=".weswings" id="weswings" class="desktopFeedButtons" type="button">Weswings</button>
-            </a>
+        <div class="button-group-vertical filter-button-group" role="group" aria-label="...">
+            <button data-filter="*" id="all" class="btn desktopFeedButtons" type="button">All</button>
+            <button data-filter=".usdan" id="usdan" class="btn desktopFeedButtons" type="button">Usdan Marketplace</button>
+            <button data-filter=".ucafe" id="ucafe" class="btn desktopFeedButtons" type="button">Usdan Cafe</button>
+            <button data-filter=".pi" id="pi" class="btn desktopFeedButtons" type="button">Pi Cafe</button>
+            <button data-filter=".summies" id="Summies" class="btn desktopFeedButtons" type="button">Summerfields</button>
+            <button data-filter=".starcrescent" id="starcrescent" class="btn desktopFeedButtons" type="button">Star & Crescent</button>
+            <button data-filter=".redblack" id="redblack" class="btn desktopFeedButtons" type="button">Red & Black Cafe</button>
+            <button data-filter=".weswings" id="weswings" class="btn desktopFeedButtons" type="button">Weswings</button>
         </div>
     </div>    
     
@@ -119,6 +124,10 @@
     </div>
     </div>
 	
-	
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
 	</body>
 </html>
