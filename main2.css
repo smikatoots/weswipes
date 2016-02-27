@@ -28,7 +28,7 @@ footer, header, hgroup, menu, nav, section {
 
 .header {
     margin: auto;
-    background-color: indianred;
+    background-color: #8b0000;
     padding: 20px;
     margin-bottom: 20px;
 }
@@ -56,17 +56,21 @@ img {
 
 .sidemenu {
     float: left;
-    margin: auto; 
     border: solid 1px;
-    width: 30%;
-    height: 100px;
+    width: 35%;
     margin-right: 5px;
+    margin-top: 20px;
+    position: relative;
+    left: 5%
 }
 
 .feed {
-    margin: auto;
+    float: left;
     border: solid 1px;
-    width: 60%px;
+    width: 55%;
     height: 100px;
     margin-left: 5px;
+    margin-top: 20px;
+    position: relative;
+    left: 5%
 }
