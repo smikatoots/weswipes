@@ -14,84 +14,109 @@
 
 <body>
 	<nav>
-		
-        <ul id = mobileNav>
-            <li>About this Service</li>
-            <li>Your Profile</li>
-            <li>WesAdmits 1.0 (AKA Facebooks)</li>
-        </ul>
         
         <div id="titleBar">
 			<img id="logo" src="pics/logo.png">
-            <h1 id = "title">WesAdmits 2.0</h1>
+            <h1 id = "title">WeSwipes</h1>
 			<div id="menu">
+                    <img id="post" class="menuButtons" src="pics/post.png">
                     <img id="hamburger" class="menuButtons" src="pics/hamburger.png">
-					<img id="post" class="menuButtons" src="pics/post.png">
-                    <img id="inbox" class="menuButtons" src="pics/inbox.png">
 			</div>
         </div>
+    </nav>
+    <hr>
         
-        <ul id = desktopNav>
-            <li>About this Service</li>
-            <li>Your Profile</li>
-            <li>WesAdmits 1.0 (AKA Facebooks)</li>
-        </ul>
-		
-	</nav>
-	
-    <div id = "mobileFeedButtonsGroup">
-        <img class="mobileFeedButtons" src="pics/all.png">
-        <img class="mobileFeedButtons" src="pics/events.png">
-        <img class="mobileFeedButtons" src="pics/landf.png">
-        <img class="mobileFeedButtons" src="pics/rides.png">
-        <img class="mobileFeedButtons" src="pics/others.png">
+	<div id="frontPage">
+    
+    <div id="compose">
+        <button id="offer" class="composebutton" type="button">Offer</button>
+        <button id="request" class="composebutton" type="button">Request</button>
+        <select name="location">
+            <option value="usdan">Usdan Marketplace</option>
+            <option value="ucafe">Usdan Cafe</option>
+            <option value="summies">Summerfields</option>
+            <option value="redblack">Red & Black</option>
+            <option value="starcrescent">Star & Crescent</option>
+            <option value="weswings">Weswings</option>
+            <option value="pi">Pi Cafe</option>
+        </select>
+        <select name="time">
+            <option value="now">Now</option>
+            <option value="fifteen">15 Minutes</option>
+            <option value="thirty">30 Minutes</option>
+            <option value="hour">1 Hour</option>
+        </select>
+        <textarea name="message" rows="2" cols="100">
+        Type notes here. 
+        </textarea>
     </div>
     
-    <div id="feed">
+        
+    <div id="sideMenu">
         <div class="button-group filter-button-group">
             <a href="#">
-                <button data-filter="*" id="All" class="desktopFeedButtons" type="button">All</button>
+                <button data-filter="*" id="all" class="desktopFeedButtons" type="button">All</button>
             </a>
             <a href="#">
-                <button data-filter=".events" id="Events" class="desktopFeedButtons" type="button">Events</button>
+                <button data-filter=".usdan" id="usdan" class="desktopFeedButtons" type="button">Usdan Marketplace</button>
             </a>
             <a href="#">
-                <button data-filter=".lostfound" id="LostFound" class="desktopFeedButtons" type="button">Lost & Found</button>
+                <button data-filter=".ucafe" id="ucafe" class="desktopFeedButtons" type="button">Usdan Cafe</button>
             </a>
             <a href="#">
-                <button data-filter=".rides" id="Rides" class="desktopFeedButtons" type="button">Rides</button>
+                <button data-filter=".pi" id="pi" class="desktopFeedButtons" type="button">Pi Cafe</button>
             </a>
             <a href="#">
-                <button data-filter=".others" id="Others" class="desktopFeedButtons" type="button">Others</button>
+                <button data-filter=".summies" id="Summies" class="desktopFeedButtons" type="button">Summerfields</button>
+            </a>
+            <a href="#">
+                <button data-filter=".starcrescent" id="starcrescent" class="desktopFeedButtons" type="button">Star & Crescent</button>
+            </a>
+            <a href="#">
+                <button data-filter=".redblack" id="redblack" class="desktopFeedButtons" type="button">Red & Black Cafe</button>
+            </a>
+            <a href="#">
+                <button data-filter=".weswings" id="weswings" class="desktopFeedButtons" type="button">Weswings</button>
             </a>
         </div>
-        
-        <div class="grid" id="feedPosts">
+    </div>    
+    
+    <div class="grid" id="feedPosts">
             <a href="#">
-                <div class="grid-item events" id="postplaceholder">
-                events</div>
+                <div class="grid-item usdan" id="postplaceholder">
+                usdan</div>
             </a>
             <a href="#">
-                <div class="grid-item lostfound" id="postplaceholder">
-                lost and found
+                <div class="grid-item weswings" id="postplaceholder">
+                weswings
                 </div>
             </a>
             <a href="#">
-                <div class="grid-item rides" id="postplaceholder">
-                rides
+                <div class="grid-item redblack" id="postplaceholder">
+                red & black
                 </div>
             </a>
             <a href="#">
-                <div class="grid-item others" id="postplaceholder">
-                others
+                <div class="grid-item starcrescent" id="postplaceholder">
+                star & crescent
                 </div>
             </a>
             <a href="#">
-                <div class="grid-item events" id="postplaceholder">
-                events
+                <div class="grid-item summies" id="postplaceholder">
+                summies
                 </div>
             </a>
-        </div>
+            <a href="#">
+                <div class="grid-item usdan" id="postplaceholder">
+                usdan
+                </div>
+            </a>
+            <a href="#">
+                <div class="grid-item weswings" id="postplaceholder">
+                weswings
+            </div>
+            </a>
+    </div>
     </div>
 	
 	
