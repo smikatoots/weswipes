@@ -32,10 +32,19 @@
     <div class = "frontpage">
     
     <div class = "compose"> 
-        <div class="btn-group composebox" role="group" aria-label="...">
-
-            <div class="btn-group composeelements" role="group">
-                <select class="form-control" id="location">
+        
+        <div class="form-group">
+            <input type="text" placeholder="What's your first & last name?" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+            <input type="email" placeholder="What's your email?" class="form-control" id="email">
+        </div> 
+        <div class="form-group">
+            <input type="text" placeholder="What's your number?" class="form-control" id="number">
+        </div> 
+        
+            <div class="form-group btn-group composeelements" role="group">
+                <select type="location" class="form-control" id="location">
                     <option>Usdan Marketplace</option>
                     <option>Usdan Cafe</option>
                     <option>Pi Cafe</option>
@@ -45,18 +54,20 @@
                 </select>
             </div>
             
-            <div class="btn-group composeelements" role="group">
-                <select class="form-control" id="time">
+            <div class="form-group btn-group composeelements" role="group">
+                <select type="time" class="form-control" id="time">
                     <option>Now</option>
                     <option>In 15 minutes</option>
                     <option>In 30 minutes</option>
                     <option>In 1 hour</option>
                 </select>
             </div>
-        </div>
-        <div class="form-group">
+        
+        <div class="note form-group">
             <textarea placeholder="What do you want to say?" class="form-control" rows="3" id="note"></textarea>
         </div>
+        
+        <input type="submit" class="btn" value="Submit Swipe Request">
         
     </div>
         
@@ -74,6 +85,20 @@
        <div class="feed grid" id="feedPosts">
             <a href="#">
                 <div class="grid-item usdan" id="postplaceholder">
+            </a>
+            <a href="#">
+                <div class="grid-item redblack" id="postplaceholder">
+                red & black
+                    
+                    <div class="media-left media-middle">
+                    <a href="#">
+                    <img class="media-object" src="Weswipe Logo Final.png" width="100" alt="...">
+                    </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><div class="grid-item redblack" id="postplaceholder"></h4>      
+                </div>                    
+                    
                 usdan</div>
             </a>
             <a href="#">
