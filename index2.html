@@ -70,9 +70,6 @@
         </div>
 
         <input type="submit" class="btn" onclick="javascript:button_submit();" value="Submit Swipe Request">
-
-        <button id="retrieve" button type="button" onclick="javascript:button_retrieve();" class="btn btn-default" type="button">Retrieve</button>
-
     </div>
 
         <div class = "button-group-vertical filter-button-group sidemenu">
@@ -146,7 +143,7 @@
           var time = data.val().time;
 
           var newFeedPost = $("#feedPosts_list");
-          newFeedPost.append("<li class = 'list-group-item'>"+"Requested by: "+"<button id='offer' button type='button' onclick='button_remove("+"&#39;"+user_name+"&#39;"+");' class='btn btn-default' type='button'>"+user_name+"</button>"+
+          newFeedPost.append("<li class = 'list-group-item'>"+"Requested by: "+"<button id='offer' button type='button' class = 'btn btn-default btn-xs'onclick='button_remove("+"&#39;"+user_name+"&#39;"+");' class='btn btn-default' type='button'>"+user_name+"</button>"+
           "<br>"+task+"<br>"+"At: "+restaurant+"</li>");
 
           $("#feedPosts_list").append(newFeedPost);
