@@ -6,6 +6,7 @@
 <!--<link rel="stylesheet" href="unslider.css">
 <link rel="stylesheet" href="unslider-dots.css">-->
 <script src="jquery-2.1.4.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 <script src="sam.js"></script>
 <script src="script.js"></script>
 <script src="velocity.min.js"></script>
@@ -84,7 +85,7 @@
         </div>
 
 
-       <div class="feed grid" id="feedPosts">
+       <div style="font-family: 'Roboto', sans-serif;" class="feed grid" id="feedPosts">
          <ul class="list-group" id="feedPosts_list">
          </ul>
        </div>
@@ -127,8 +128,6 @@
       else {
         x = "You pressed Cancel!";
       }
-      //alert(number);
-      //ref_user.remove();
     }
 
     //retrieves information from database - refresh?
@@ -143,8 +142,9 @@
           var time = data.val().time;
 
           var newFeedPost = $("#feedPosts_list");
-          newFeedPost.append("<li class = 'list-group-item'>"+"Requested by: "+"<button id='offer' button type='button' class = 'btn btn-default btn-xs'onclick='button_remove("+"&#39;"+user_name+"&#39;"+");' class='btn btn-default' type='button'>"+user_name+"</button>"+
-          "<br>"+task+"<br>"+"At: "+restaurant+"</li>");
+          newFeedPost.append("<li class = 'list-group-item'>"+"<b style='font-size:18px'><u>Requested by: </b></u>"+"&nbsp;&nbsp;&nbsp;&nbsp;"+"<button id='offer' button type='button' class = 'btn btn-default btn-xs'onclick='button_remove("+"&#39;"+user_name+
+          "&#39;"+");' class='btn btn-default' type='button'>"+user_name+"</button>"+
+          "<br><br><p>"+task+"</p><br>"+"At: "+"<span class='label label-primary'>"+restaurant+"</span>"+"</li>");
 
           $("#feedPosts_list").append(newFeedPost);
         })
