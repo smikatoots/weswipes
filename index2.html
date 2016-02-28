@@ -90,8 +90,6 @@
 
        <div class="feed grid" id="feedPosts">
          <ul class="list-group" id="feedPosts_list">
-           <li class="list-group-item">Listing One</li>
-           <li class="list-group-item">Listing Two</li>
          </ul>
        </div>
 
@@ -111,33 +109,51 @@
 
       var userRef = ref_users.child(user);
       userRef.set({"name":user, "mobile":user_mobile, "task":user_task, "restaurant":restaurant, "time":time});
-    };
+      alert(user+", your request has been submitted");
+      button_retrieve();
+    }
+    function button_remove(input){
+      console.log("am i here");
+      var userRef = ref.child("users");
+      var ref_user= userRef.child(input);
+      var number = 0
+      ref_user.child("mobile").on("value", function(snapshot) {
+        number = snapshot.val();
+        console.log(number);
+      });
+
+      var r = confirm("Would you like to accept this task?");
+      if (r == true) {
+        alert("This is their number \n"+number+"\nPlease contact them to arrange this task");
+        ref_user.remove();
+        button_retrieve();
+      }
+      else {
+        x = "You pressed Cancel!";
+      }
+      //alert(number);
+      //ref_user.remove();
+    }
 
     //retrieves information from database - refresh?
     function button_retrieve(){
+      $("ul").empty();
       ref_users.on("value", function(snapshot){
         snapshot.forEach(function(data){
-          console.log(data.val());
           var user_name = data.val().name;
           var mobile = data.val().mobile;
           var task = data.val().task;
           var restaurant = data.val().restaurant;
           var time = data.val().time;
-          console.log(user_name)
 
-          var newFeedPost = $("<li>");
-          newFeedPost.append($("<em/>").text(user_name));
-          //newFeedPost.append($("<em/>").text(task));
-          //newFeedPost.append($("<em/>").text(restaurant));
+          var newFeedPost = $("#feedPosts_list");
+          newFeedPost.append("<li class = 'list-group-item'>"+"Requested by: "+"<button id='offer' button type='button' onclick='button_remove("+"&#39;"+user_name+"&#39;"+");' class='btn btn-default' type='button'>"+user_name+"</button>"+
+          "<br>"+task+"<br>"+"At: "+restaurant+"</li>");
+
           $("#feedPosts_list").append(newFeedPost);
-          //var newRow = $("<tr/>");
-          //newRow.append($("<td/>").append($("<em/>").text(user_name)));
-          //newRow.append($("<td/>").append($("<em/>").text(mobile)));
-          //newRow.append($("<td/>").append($("<em/>").text(task)));
-          //newRow.append($("<td/>").append($("<em/>").text(user_offer)));
         })
       })
-    };
+    }
     </script>
 
 
