@@ -24,7 +24,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="button_retrieve()">
 
     <div class = "header">
         <img class="center-block" src="pics/logo.png">
@@ -69,9 +69,8 @@
             <textarea placeholder="What do you want to say?" class="form-control" rows="3" id="note"></textarea>
         </div>
 
-        <input type="submit" class="btn" value="Submit Swipe Request">
+        <input type="submit" class="btn" onclick="javascript:button_submit();" value="Submit Swipe Request">
 
-        <button id="offer" button type="button" onclick="javascript:button_submit();" class="btn btn-default" type="button">Submit</button>
         <button id="retrieve" button type="button" onclick="javascript:button_retrieve();" class="btn btn-default" type="button">Retrieve</button>
 
     </div>
