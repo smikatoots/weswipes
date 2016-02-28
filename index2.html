@@ -6,11 +6,13 @@
 <!--<link rel="stylesheet" href="unslider.css">
 <link rel="stylesheet" href="unslider-dots.css">-->
 <script src="jquery-2.1.4.min.js"></script>
+<script src="sam.js"></script>
 <script src="script.js"></script>
 <script src="velocity.min.js"></script>
 <script src="isotope.pkgd.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+<script src="sam.js"></script>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -20,40 +22,40 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    
 </head>
 
 <body>
-    
+
     <div class = "header">
         <img class="center-block" src="pics/logo.png">
     </div>
-    
+
     <div class = "frontpage">
-    
-    <div class = "compose"> 
-        
+
+
+    <div class = "compose">
+
         <div class="form-group">
             <input type="text" placeholder="What's your first & last name?" class="form-control" id="name">
         </div>
         <div class="form-group">
             <input type="email" placeholder="What's your email?" class="form-control" id="email">
-        </div> 
+        </div>
         <div class="form-group">
             <input type="text" placeholder="What's your number?" class="form-control" id="number">
-        </div> 
-        
+        </div>
+
             <div class="form-group btn-group composeelements" role="group">
-                <select type="location" class="form-control" id="location">
-                    <option>Usdan Marketplace</option>
-                    <option>Usdan Cafe</option>
-                    <option>Pi Cafe</option>
-                    <option>Red & Black Cafe</option>
-                    <option>Star & Crescent</option>
-                    <option>WesWings</option>
+                <select class="form-control" id="location">
+                  <option>Usdan Marketplace</option>
+                  <option>Usdan Cafe</option>
+                  <option>Pi Cafe</option>
+                  <option>Red and Black Cafe</option>
+                  <option>Star and Crescent</option>
+                  <option>WesWings</option>
                 </select>
             </div>
-            
+
             <div class="form-group btn-group composeelements" role="group">
                 <select type="time" class="form-control" id="time">
                     <option>Now</option>
@@ -62,15 +64,18 @@
                     <option>In 1 hour</option>
                 </select>
             </div>
-        
+
         <div class="note form-group">
             <textarea placeholder="What do you want to say?" class="form-control" rows="3" id="note"></textarea>
         </div>
-        
+
         <input type="submit" class="btn" value="Submit Swipe Request">
-        
+
+        <button id="offer" button type="button" onclick="javascript:button_submit();" class="btn btn-default" type="button">Submit</button>
+        <button id="retrieve" button type="button" onclick="javascript:button_retrieve();" class="btn btn-default" type="button">Retrieve</button>
+
     </div>
-        
+
         <div class = "button-group-vertical filter-button-group sidemenu">
                 <button data-filter="*" type="button" class="btn btn-danger btn-block">All</button>
                 <button data-filter=".usdan" type="button" class="btn btn-danger btn-block">Usdan Marketplace</button>
@@ -81,8 +86,10 @@
                 <button data-filter=".weswings" type="button" class="btn btn-danger btn-block">WesWings</button>
                 <button data-filter=".sandc" type="button" class="btn btn-danger btn-block">Star & Crescent</button>
         </div>
-        
+
+
        <div class="feed grid" id="feedPosts">
+<<<<<<< HEAD
 
                 <div class="grid-item usdan" id="postplaceholder">                  
                 usdan
@@ -90,6 +97,27 @@
            
            <!-- need to input class for location when integrating with back-end, to make sure it filters properly -->
            
+=======
+            <a href="#">
+                <div class="grid-item usdan" id="postplaceholder">
+            </a>
+            <a href="#">
+                <div class="grid-item redblack" id="postplaceholder">
+                red & black
+
+                    <div class="media-left media-middle">
+                    <a href="#">
+                    <img class="media-object" src="Weswipe Logo Final.png" width="100" alt="...">
+                    </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><div class="grid-item redblack" id="postplaceholder"></h4>
+                </div>
+
+                usdan</div>
+            </a>
+            <a href="#">
+>>>>>>> origin/master
                 <div class="grid-item weswings" id="postplaceholder">
                 weswings
                 </div>
@@ -121,13 +149,58 @@
                 <div class="grid-item ucafe" id="postplaceholder">
                 weswings
             </div>
+<<<<<<< HEAD
+
+=======
+            </a>
+         <ul class="list-group" id="feedPosts_list">
+           <li class="list-group-item">Listing One</li>
+           <li class="list-group-item">Listing Two</li>
+         </ul>
+>>>>>>> origin/master
+    </div>
 
     </div>
-        
-    </div>
-    
-    
-    
+
+    <script>
+    var ref = new Firebase('https://wesapps.firebaseio.com/');
+    var ref_users = ref.child("users");
+    var htmlForPath = {};
+
+    function button_submit(){
+      var user = $("#name").val();
+      var user_mobile = $("#number").val();
+      var user_task = $("#note").val();
+      var restaurant = $("#location").val();
+      var time = $("#time").val();
+
+      var userRef = ref_users.child(user);
+      userRef.set({"name":user, "mobile":user_mobile, "task":user_task, "restaurant":restaurant, "time":time});
+    };
+
+    //retrieves information from database - refresh?
+    function button_retrieve(){
+      ref_users.on("child_added", function(snapshot){
+        console.log(snapshot.val());
+        var user_name = snapshot.val().name;
+        var mobile = snapshot.val().mobile;
+        var task = snapshot.val().task;
+        var restaurant = snapshot.val().restaurant;
+        var time = snapshot.val().time;
+      //var newRow = $("<tr/>");
+        //newRow.append($("<td/>").append($("<em/>").text(user_name)));
+        //newRow.append($("<td/>").append($("<em/>").text(mobile)));
+        //newRow.append($("<td/>").append($("<em/>").text(task)));
+        //newRow.append($("<td/>").append($("<em/>").text(user_offer)));
+
+
+        //$("#feedPosts_list").append(newFeedPost);
+      })
+    };
+    </script>
+
+
+
 
  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
